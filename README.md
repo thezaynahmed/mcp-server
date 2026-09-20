@@ -2,7 +2,7 @@
 
 Official Model Context Protocol (MCP) server for Zain Ahmed's verified multi-cloud production systems, SRE blueprints, 5x cloud credentials, and FinOps advisory.
 
-[![Smithery Registry](https://img.shields.io/badge/Smithery-Registry-orange.svg?style=flat-square)](https://smithery.ai/server/@thezaynahmed/mcp-server)
+[![Smithery Registry](https://img.shields.io/badge/Smithery-Registry-orange.svg?style=flat-square)](https://smithery.ai/server/@zainahmed-net/mcp-server)
 [![npm version](https://img.shields.io/npm/v/@zainahmed.net/sdk.svg?style=flat-square&color=2563eb)](https://www.npmjs.com/package/@zainahmed.net/sdk)
 [![CI Status](https://img.shields.io/github/actions/workflow/status/thezaynahmed/mcp-server/ci.yml?branch=main&style=flat-square)](https://github.com/thezaynahmed/mcp-server/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](./LICENSE)
@@ -25,16 +25,16 @@ This server connects autonomous AI agents (Claude Code, Cursor, Windsurf, Roo Co
 
 ### 1. 1-Click Installation via Smithery
 
-Install automatically for your preferred AI client through [Smithery](https://smithery.ai/server/@thezaynahmed/mcp-server):
+Install automatically for your preferred AI client through [Smithery](https://smithery.ai/server/@zainahmed-net/mcp-server):
 
 **Claude Desktop:**
 ```bash
-npx -y @smithery/cli install @thezaynahmed/mcp-server --client claude
+npx -y @smithery/cli install @zainahmed-net/mcp-server --client claude
 ```
 
 **Cursor IDE:**
 ```bash
-npx -y @smithery/cli install @thezaynahmed/mcp-server --client cursor
+npx -y @smithery/cli install @zainahmed-net/mcp-server --client cursor
 ```
 
 ---
