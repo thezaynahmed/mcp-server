@@ -27,6 +27,39 @@ const TOOLS = [
         }
       },
       additionalProperties: false
+    },
+    outputSchema: {
+          "type": "object",
+          "description": "Verified professional profile data including bio, credentials, principles, and contact information.",
+          "properties": {
+                "name": {
+                      "type": "string"
+                },
+                "title": {
+                      "type": "string"
+                },
+                "bio": {
+                      "type": "string"
+                },
+                "location": {
+                      "type": "string"
+                },
+                "headline": {
+                      "type": "string"
+                },
+                "philosophy": {
+                      "type": "string"
+                },
+                "certifications": {
+                      "type": "array"
+                },
+                "principles": {
+                      "type": "array"
+                },
+                "social": {
+                      "type": "object"
+                }
+          }
     }
   },
   {
@@ -43,6 +76,18 @@ const TOOLS = [
         }
       },
       additionalProperties: false
+    },
+    outputSchema: {
+          "type": "object",
+          "description": "Exhaustive categorized technology competency matrices with proficiency ratings.",
+          "properties": {
+                "category": {
+                      "type": "string"
+                },
+                "skills": {
+                      "type": "array"
+                }
+          }
     }
   },
   {
@@ -53,6 +98,37 @@ const TOOLS = [
       type: "object",
       properties: {},
       additionalProperties: false
+    },
+    outputSchema: {
+          "type": "object",
+          "description": "List of 5x verified multi-cloud credentials, badge verification URLs, and credential IDs.",
+          "properties": {
+                "certifications": {
+                      "type": "array",
+                      "items": {
+                            "type": "object",
+                            "properties": {
+                                  "name": {
+                                        "type": "string"
+                                  },
+                                  "issuer": {
+                                        "type": "string"
+                                  },
+                                  "verificationUrl": {
+                                        "type": "string"
+                                  },
+                                  "credentialId": {
+                                        "type": "string"
+                                  }
+                            },
+                            "required": [
+                                  "name",
+                                  "issuer",
+                                  "verificationUrl"
+                            ]
+                      }
+                }
+          }
     }
   },
   {
@@ -69,6 +145,52 @@ const TOOLS = [
         }
       },
       additionalProperties: false
+    },
+    outputSchema: {
+          "type": "object",
+          "description": "Verified production enterprise case studies, system architectures, and metrics.",
+          "properties": {
+                "projects": {
+                      "type": "array",
+                      "items": {
+                            "type": "object",
+                            "properties": {
+                                  "slug": {
+                                        "type": "string"
+                                  },
+                                  "title": {
+                                        "type": "string"
+                                  },
+                                  "category": {
+                                        "type": "string"
+                                  },
+                                  "description": {
+                                        "type": "string"
+                                  },
+                                  "techStack": {
+                                        "type": "array",
+                                        "items": {
+                                              "type": "string"
+                                        }
+                                  },
+                                  "metrics": {
+                                        "type": "array",
+                                        "items": {
+                                              "type": "string"
+                                        }
+                                  }
+                            },
+                            "required": [
+                                  "slug",
+                                  "title",
+                                  "description"
+                            ]
+                      }
+                },
+                "total": {
+                      "type": "integer"
+                }
+          }
     }
   },
   {
@@ -84,6 +206,51 @@ const TOOLS = [
         }
       },
       additionalProperties: false
+    },
+    outputSchema: {
+          "type": "object",
+          "description": "Published architectural blueprints, compliance guides, and technical essays.",
+          "properties": {
+                "articles": {
+                      "type": "array",
+                      "items": {
+                            "type": "object",
+                            "properties": {
+                                  "slug": {
+                                        "type": "string"
+                                  },
+                                  "title": {
+                                        "type": "string"
+                                  },
+                                  "description": {
+                                        "type": "string"
+                                  },
+                                  "date": {
+                                        "type": "string"
+                                  },
+                                  "category": {
+                                        "type": "string"
+                                  },
+                                  "tags": {
+                                        "type": "array",
+                                        "items": {
+                                              "type": "string"
+                                        }
+                                  },
+                                  "readingTime": {
+                                        "type": "string"
+                                  }
+                            },
+                            "required": [
+                                  "slug",
+                                  "title"
+                            ]
+                      }
+                },
+                "total": {
+                      "type": "integer"
+                }
+          }
     }
   },
   {
@@ -100,6 +267,42 @@ const TOOLS = [
         }
       },
       additionalProperties: false
+    },
+    outputSchema: {
+          "type": "object",
+          "description": "Ranked search results across articles, case studies, and platform documentation.",
+          "properties": {
+                "query": {
+                      "type": "string"
+                },
+                "results": {
+                      "type": "array",
+                      "items": {
+                            "type": "object",
+                            "properties": {
+                                  "type": {
+                                        "type": "string"
+                                  },
+                                  "title": {
+                                        "type": "string"
+                                  },
+                                  "snippet": {
+                                        "type": "string"
+                                  },
+                                  "url": {
+                                        "type": "string"
+                                  }
+                            },
+                            "required": [
+                                  "title",
+                                  "url"
+                            ]
+                      }
+                },
+                "count": {
+                      "type": "integer"
+                }
+          }
     }
   },
   {
@@ -116,6 +319,42 @@ const TOOLS = [
         }
       },
       additionalProperties: false
+    },
+    outputSchema: {
+          "type": "object",
+          "description": "Advisory retainers, fractional leadership tiers, deliverables, and rates.",
+          "properties": {
+                "services": {
+                      "type": "array",
+                      "items": {
+                            "type": "object",
+                            "properties": {
+                                  "id": {
+                                        "type": "string"
+                                  },
+                                  "name": {
+                                        "type": "string"
+                                  },
+                                  "tier": {
+                                        "type": "string"
+                                  },
+                                  "deliverables": {
+                                        "type": "array",
+                                        "items": {
+                                              "type": "string"
+                                        }
+                                  },
+                                  "pricing": {
+                                        "type": "string"
+                                  }
+                            },
+                            "required": [
+                                  "name",
+                                  "tier"
+                            ]
+                      }
+                }
+          }
     }
   },
   {
@@ -136,6 +375,34 @@ const TOOLS = [
         }
       },
       additionalProperties: false
+    },
+    outputSchema: {
+          "type": "object",
+          "description": "Estimated cloud cost savings, ROI projection, and architecture recommendations.",
+          "properties": {
+                "currentSpend": {
+                      "type": "number"
+                },
+                "estimatedMonthlySavings": {
+                      "type": "number"
+                },
+                "estimatedAnnualSavings": {
+                      "type": "number"
+                },
+                "savingsPercentage": {
+                      "type": "number"
+                },
+                "optimizations": {
+                      "type": "array",
+                      "items": {
+                            "type": "string"
+                      }
+                }
+          },
+          "required": [
+                "estimatedMonthlySavings",
+                "estimatedAnnualSavings"
+          ]
     }
   },
   {
@@ -168,6 +435,25 @@ const TOOLS = [
         }
       },
       additionalProperties: false
+    },
+    outputSchema: {
+          "type": "object",
+          "description": "Encrypted inquiry dispatch receipt with tracking reference ID.",
+          "properties": {
+                "success": {
+                      "type": "boolean"
+                },
+                "referenceId": {
+                      "type": "string"
+                },
+                "message": {
+                      "type": "string"
+                }
+          },
+          "required": [
+                "success",
+                "referenceId"
+          ]
     }
   },
   {
@@ -184,6 +470,39 @@ const TOOLS = [
         }
       },
       additionalProperties: false
+    },
+    outputSchema: {
+          "type": "object",
+          "description": "Ranked documentation search results with relevance snippets.",
+          "properties": {
+                "query": {
+                      "type": "string"
+                },
+                "results": {
+                      "type": "array",
+                      "items": {
+                            "type": "object",
+                            "properties": {
+                                  "title": {
+                                        "type": "string"
+                                  },
+                                  "snippet": {
+                                        "type": "string"
+                                  },
+                                  "url": {
+                                        "type": "string"
+                                  }
+                            },
+                            "required": [
+                                  "title",
+                                  "url"
+                            ]
+                      }
+                },
+                "count": {
+                      "type": "integer"
+                }
+          }
     }
   },
   {
@@ -201,6 +520,29 @@ const TOOLS = [
         }
       },
       additionalProperties: false
+    },
+    outputSchema: {
+          "type": "object",
+          "description": "Complete documentation article content, format, and section anchors.",
+          "properties": {
+                "slug": {
+                      "type": "string"
+                },
+                "title": {
+                      "type": "string"
+                },
+                "content": {
+                      "type": "string"
+                },
+                "lastModified": {
+                      "type": "string"
+                }
+          },
+          "required": [
+                "slug",
+                "title",
+                "content"
+          ]
     }
   }
 ]

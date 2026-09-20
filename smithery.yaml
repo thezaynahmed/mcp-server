@@ -1,3 +1,9 @@
+displayName: "Zain Ahmed Platform MCP Server"
+description: "Official Model Context Protocol (MCP) server for Zain Ahmed's verified multi-cloud production systems, SRE architectures, 5x cloud credentials, and FinOps advisory."
+iconUrl: "https://zainahmed.net/android-chrome-192x192.png"
+homepage: "https://zainahmed.net"
+repository: "https://github.com/thezaynahmed/mcp-server"
+
 startCommand:
   type: stdio
   config:

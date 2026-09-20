@@ -1,0 +1,783 @@
+{
+  "name": "zain-ahmed-mcp-server",
+  "displayName": "Zain Ahmed Platform MCP Server",
+  "title": "Zain Ahmed Engineering & Architecture MCP Server",
+  "version": "2.0.0",
+  "description": "Official Model Context Protocol (MCP) server for Zain Ahmed's verified multi-cloud production systems, SRE architectures, 5x cloud credentials, and FinOps advisory.",
+  "homepage": "https://zainahmed.net",
+  "homepageUrl": "https://zainahmed.net",
+  "website": "https://zainahmed.net",
+  "websiteUrl": "https://zainahmed.net",
+  "icon": "https://zainahmed.net/android-chrome-192x192.png",
+  "iconUrl": "https://zainahmed.net/android-chrome-192x192.png",
+  "logo": "https://zainahmed.net/android-chrome-192x192.png",
+  "logoUrl": "https://zainahmed.net/android-chrome-192x192.png",
+  "repository": "https://github.com/thezaynahmed/mcp-server",
+  "serverUrl": "https://zainahmed.net/mcp",
+  "docsServerUrl": "https://zainahmed.net/mcp/docs",
+  "endpoint": "https://zainahmed.net/mcp",
+  "serverInfo": {
+    "name": "zainahmed-portfolio",
+    "displayName": "Zain Ahmed Platform MCP Server",
+    "title": "Zain Ahmed Engineering & Architecture MCP Server",
+    "version": "2.0.0",
+    "description": "Official Model Context Protocol (MCP) server for Zain Ahmed's verified multi-cloud production systems, SRE architectures, 5x cloud credentials, and FinOps advisory.",
+    "homepage": "https://zainahmed.net",
+    "homepageUrl": "https://zainahmed.net",
+    "website": "https://zainahmed.net",
+    "websiteUrl": "https://zainahmed.net",
+    "icon": "https://zainahmed.net/android-chrome-192x192.png",
+    "iconUrl": "https://zainahmed.net/android-chrome-192x192.png",
+    "logo": "https://zainahmed.net/android-chrome-192x192.png",
+    "logoUrl": "https://zainahmed.net/android-chrome-192x192.png",
+    "repository": "https://github.com/thezaynahmed/mcp-server"
+  },
+  "mcpServers": {
+    "zainahmed": {
+      "url": "https://zainahmed.net/mcp",
+      "transport": "streamable-http",
+      "kind": "product",
+      "description": "Product & Operations MCP Server"
+    },
+    "zainahmed-docs": {
+      "url": "https://zainahmed.net/mcp/docs",
+      "transport": "streamable-http",
+      "kind": "docs",
+      "description": "Documentation & Architectural Blueprints MCP Server"
+    }
+  },
+  "servers": [
+    {
+      "name": "zainahmed",
+      "url": "https://zainahmed.net/mcp",
+      "kind": "product",
+      "description": "Zain Ahmed Product & Architecture Operations MCP Server"
+    },
+    {
+      "name": "zainahmed-docs",
+      "url": "https://zainahmed.net/mcp/docs",
+      "kind": "docs",
+      "description": "Zain Ahmed Technical Documentation, Blueprints & API Reference MCP Server"
+    }
+  ],
+  "transport": "Streamable HTTP (JSON-RPC 2.0) & SSE",
+  "protocolVersion": "2024-11-05",
+  "registries": {
+    "smithery": "https://smithery.ai/server/@zainahmed-net/mcp-server",
+    "glama": "https://glama.ai/mcp/servers/zainahmed",
+    "mcpso": "https://mcp.so/server/zainahmed"
+  },
+  "tools": [
+    {
+      "name": "get_profile",
+      "description": "Retrieve Zain Ahmed's verified professional profile, 5x multi-cloud credentials (AWS, Azure, GCP, OCI, HashiCorp), location, philosophy, and competencies.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "section": {
+            "type": "string",
+            "description": "Filter section: all, bio, credentials, certifications, principles, contacts",
+            "enum": [
+              "all",
+              "bio",
+              "credentials",
+              "certifications",
+              "principles",
+              "contacts"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "description": "Verified professional profile data including bio, credentials, principles, and contact information.",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "bio": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "headline": {
+            "type": "string"
+          },
+          "philosophy": {
+            "type": "string"
+          },
+          "certifications": {
+            "type": "array"
+          },
+          "principles": {
+            "type": "array"
+          },
+          "social": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_about",
+      "description": "Retrieve the complete About story, personal philosophy ('AI makes me faster. The judgment is mine.'), letter from Zain, and operational tenets.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "description": "Complete narrative, engineering tenets, personal letter, and operational philosophy.",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "philosophy": {
+            "type": "string"
+          },
+          "letter": {
+            "type": "string"
+          },
+          "principles": {
+            "type": "array"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_skills",
+      "description": "Query Zain Ahmed's exhaustive categorized technology stack across Kubernetes, Multi-Cloud, IaC, DevSecOps, Observability, and Agentic AI.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "description": "Skill category: all, multiCloud, containersAndOrchestration, infrastructureAsCode, ciCdAndGitOps, agenticAiAndMlOps, observabilityAndSre, securityAndCompliance, programmingLanguages"
+          }
+        },
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "description": "Exhaustive categorized technology competency matrices with proficiency ratings.",
+        "properties": {
+          "category": {
+            "type": "string"
+          },
+          "skills": {
+            "type": "array"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_certifications",
+      "description": "Retrieve all 5x active multi-cloud certifications with issuing institutions, Credly verification URLs, and credential IDs.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "description": "List of 5x verified multi-cloud credentials, badge verification URLs, and credential IDs.",
+        "properties": {
+          "certifications": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "issuer": {
+                  "type": "string"
+                },
+                "verificationUrl": {
+                  "type": "string"
+                },
+                "credentialId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "issuer",
+                "verificationUrl"
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "get_projects",
+      "description": "Query verified enterprise production case studies, system blueprints, and business metrics across CBDC, DevOps, FinTech, and Cloud Engineering.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "description": "Category filter (e.g. FinTech, Consulting, Healthcare, Cloud Engineering)"
+          },
+          "tech": {
+            "type": "string",
+            "description": "Filter by technology used (e.g. Kubernetes, Terraform, ArgoCD, GCP, AWS)"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Max number of projects to return (default: 10)"
+          },
+          "offset": {
+            "type": "integer",
+            "description": "Offset for pagination (default: 0)"
+          }
+        },
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "description": "Verified production enterprise case studies, system architectures, and metrics.",
+        "properties": {
+          "projects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "slug": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "techStack": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "metrics": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "slug",
+                "title",
+                "description"
+              ]
+            }
+          },
+          "total": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_project_by_slug",
+      "description": "Retrieve comprehensive technical case study details for a specific project by slug, including problem, solution architecture, and verified metrics.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false
+      },
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "slug"
+        ],
+        "properties": {
+          "slug": {
+            "type": "string",
+            "description": "The unique slug identifier of the project (e.g. 'pivotal-build', 'yubi', 'dcma')"
+          }
+        },
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "description": "Comprehensive technical case study details including problem, solution, and verified metrics.",
+        "properties": {
+          "slug": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "problem": {
+            "type": "string"
+          },
+          "solution": {
+            "type": "string"
+          },
+          "architecture": {
+            "type": "string"
+          },
+          "metrics": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "techStack": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "slug",
+          "title"
+        ]
+      }
+    },
+    {
+      "name": "get_articles",
+      "description": "Query published architectural blueprints, SOC 2 Type II compliance guides, and Kubernetes SRE articles with pagination.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "description": "Article category filter"
+          },
+          "tag": {
+            "type": "string",
+            "description": "Tag filter (e.g. Kubernetes, SRE, FinOps, SOC 2, Multi-Cloud, Antigravity)"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Max number of articles to return (default: 10)"
+          },
+          "offset": {
+            "type": "integer",
+            "description": "Offset for pagination (default: 0)"
+          }
+        },
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "description": "Published architectural blueprints, compliance guides, and technical essays.",
+        "properties": {
+          "articles": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "slug": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "date": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "tags": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "readingTime": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "slug",
+                "title"
+              ]
+            }
+          },
+          "total": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_article_by_slug",
+      "description": "Retrieve the full markdown publication content, metadata, reading time, and checkpoints for a specific technical article by slug.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false
+      },
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "slug"
+        ],
+        "properties": {
+          "slug": {
+            "type": "string",
+            "description": "The unique slug of the article (e.g. 'moving-beyond-ai-code-editor-antigravity-2-0', 'soc2-continuous-compliance-blueprint')"
+          }
+        },
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "description": "Full publication markdown content, metadata, reading time, and checkpoints.",
+        "properties": {
+          "slug": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "slug",
+          "title",
+          "content"
+        ]
+      }
+    },
+    {
+      "name": "search_knowledge_base",
+      "description": "Full-text search across all case studies, architecture articles, developer documentation, and platform capabilities.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false
+      },
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "query"
+        ],
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search keyword or phrase (e.g. 'Karpenter bin-packing', 'SOC 2', 'Antigravity', 'Zero-Trust')"
+          }
+        },
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "description": "Ranked search results across articles, case studies, and platform documentation.",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "snippet": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "url"
+              ]
+            }
+          },
+          "count": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_services",
+      "description": "Retrieve platform engineering advisory retainers, fractional leadership tiers, deliverables, commitments, and transparent rates.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "tier": {
+            "type": "string",
+            "description": "Filter by engagement model",
+            "enum": [
+              "all",
+              "audit",
+              "fractional",
+              "modernization"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "description": "Advisory retainers, fractional leadership tiers, deliverables, and rates.",
+        "properties": {
+          "services": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "tier": {
+                  "type": "string"
+                },
+                "deliverables": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "pricing": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "tier"
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "calculate_finops_roi",
+      "description": "Calculate estimated cloud cost savings and ROI from Karpenter container bin-packing, spot orchestration, and Graviton migration.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false
+      },
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "monthlyCloudSpend"
+        ],
+        "properties": {
+          "monthlyCloudSpend": {
+            "type": "number",
+            "description": "Current monthly cloud spend in USD"
+          },
+          "cloudProvider": {
+            "type": "string",
+            "description": "Cloud provider (AWS, GCP, Azure, OCI)"
+          }
+        },
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "description": "Estimated cloud cost savings, ROI projection, and architecture recommendations.",
+        "properties": {
+          "currentSpend": {
+            "type": "number"
+          },
+          "estimatedMonthlySavings": {
+            "type": "number"
+          },
+          "estimatedAnnualSavings": {
+            "type": "number"
+          },
+          "savingsPercentage": {
+            "type": "number"
+          },
+          "optimizations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "estimatedMonthlySavings",
+          "estimatedAnnualSavings"
+        ]
+      }
+    },
+    {
+      "name": "generate_architecture_manifest",
+      "description": "Generate production-ready Kubernetes YAML or Terraform infrastructure manifests based on target workload requirements.",
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false
+      },
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "manifestType"
+        ],
+        "properties": {
+          "manifestType": {
+            "type": "string",
+            "description": "Type of manifest to generate",
+            "enum": [
+              "karpenter-nodepool",
+              "k8s-pod-disruption-budget",
+              "zero-trust-network-policy",
+              "terraform-multi-cloud-vpc"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "description": "Production Kubernetes YAML or Terraform infrastructure manifest with documentation.",
+        "properties": {
+          "manifestType": {
+            "type": "string"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "instructions": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "manifestType",
+          "filename",
+          "content"
+        ]
+      }
+    },
+    {
+      "name": "submit_contact",
+      "description": "Dispatch an encrypted engineering inquiry or consultation request directly to Zain Ahmed with tracking reference ID.",
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false
+      },
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "name",
+          "email",
+          "message"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Sender name"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "description": "Sender email"
+          },
+          "company": {
+            "type": "string",
+            "description": "Company or organization name"
+          },
+          "subject": {
+            "type": "string",
+            "description": "Topic or inquiry subject"
+          },
+          "message": {
+            "type": "string",
+            "description": "Detailed inquiry message"
+          }
+        },
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "description": "Encrypted inquiry dispatch receipt with tracking reference ID.",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "referenceId": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "success",
+          "referenceId"
+        ]
+      }
+    }
+  ]
+}
