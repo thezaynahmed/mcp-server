@@ -1,0 +1,27 @@
+{
+  "$schema": "https://agent-plugins.org/specification/v1/schema.json",
+  "name": "zainahmed-mcp",
+  "title": "Zain Ahmed Platform Engineering & Architecture Tools",
+  "description": "Model Context Protocol tools for querying multi-cloud architectures, Kubernetes manifests, FinOps models, and platform engineering guidance.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Zain Ahmed",
+    "email": "hello@zainahmed.net",
+    "url": "https://zainahmed.net"
+  },
+  "homepage": "https://zainahmed.net",
+  "repository": "https://github.com/thezaynahmed/mcp-server",
+  "license": "MIT",
+  "mcpServers": {
+    "operations": {
+      "url": "https://zainahmed.net/mcp",
+      "transport": "streamable-http",
+      "description": "Primary operations and inquiry dispatch MCP server"
+    },
+    "documentation": {
+      "url": "https://zainahmed.net/mcp/docs",
+      "transport": "streamable-http",
+      "description": "Documentation, runbooks, and API specs MCP server"
+    }
+  }
+}

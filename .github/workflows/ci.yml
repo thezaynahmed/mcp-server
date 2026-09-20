@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Syntax Check
+        run: node --check bin/index.js
+      - name: Test MCP Initialize
+        run: echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}' | node bin/index.js
+      - name: Test MCP Tools List
+        run: echo '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}' | node bin/index.js

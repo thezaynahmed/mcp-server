@@ -1,0 +1,42 @@
+{
+  "name": "@zainahmed.net/mcp-server",
+  "version": "1.0.0",
+  "description": "Official Model Context Protocol (MCP) server for Zain Ahmed's verified multi-cloud production systems, SRE architectures, and FinOps advisory.",
+  "type": "module",
+  "main": "bin/index.js",
+  "bin": {
+    "zainahmed-mcp": "bin/index.js"
+  },
+  "scripts": {
+    "start": "node bin/index.js",
+    "test": "node --check bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thezaynahmed/mcp-server.git"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "smithery",
+    "claude",
+    "cursor",
+    "zainahmed",
+    "cloud-architecture",
+    "sre",
+    "finops",
+    "kubernetes"
+  ],
+  "author": "Zain Ahmed <hello@zainahmed.net> (https://zainahmed.net)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thezaynahmed/mcp-server/issues"
+  },
+  "homepage": "https://zainahmed.net",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

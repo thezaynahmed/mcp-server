@@ -1,0 +1,17 @@
+# Cursor Rules for Zain Ahmed MCP Server & Platform Integration
+
+You are pair programming with an engineer integrating or extending Zain Ahmed's Model Context Protocol (MCP) server.
+
+## Architectural Guidelines
+
+- Local MCP Server: `bin/index.js` runs over standard input/output (StdioServerTransport) following the 2024-11-05 protocol specification.
+- Remote MCP Server: `https://zainahmed.net/mcp` provides Streamable HTTP & SSE transport for remote agent hosts.
+- REST API Base: `https://zainahmed.net/api/v1` returns RFC 9457 Problem Details for all errors.
+- All read operations are annotated with `readOnlyHint: true`.
+- Zero-mutation test calls should use the `/sandbox` routes.
+
+## Development Commands
+
+- Test Server Syntax: `node --check bin/index.js`
+- Test MCP Initialization: `echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}' | node bin/index.js`
+- Test Tools Listing: `echo '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}' | node bin/index.js`
