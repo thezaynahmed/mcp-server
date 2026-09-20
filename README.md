@@ -41,12 +41,104 @@ npx -y @smithery/cli install @zainahmed-net/mcp-server --client cursor
 
 ### 2. Manual Client Configuration
 
+#### Client Configuration Matrix
+
+| Client / Environment | Support Type | Quick Configuration Command or File |
+| :--- | :---: | :--- |
+| **Antigravity (CLI / 2.0 / IDE)** | Stdio & SSE | `agy mcp add` or `.agents/mcp.json` |
+| **Claude Code** | Stdio & HTTP | `claude mcp add zainahmed -- ...` |
+| **Claude Desktop** | Stdio | `claude_desktop_config.json` |
+| **Cursor IDE** | Stdio & SSE | `.cursor/mcp.json` |
+| **Codex (CLI & IDE)** | Stdio & HTTP | `codex mcp add` or `~/.codex/config.toml` |
+| **Warp Terminal** | Stdio & HTTP | Settings > Agents > MCP or `~/.warp/mcp.json` |
+| **Factory Droid** | Stdio & HTTP | `droid mcp add` or `~/.factory/mcp.json` |
+| **Superset (superset.sh)** | Stdio & HTTP | `.mcp.json` workspace manifest |
+| **Remote Streamable HTTP** | Universal SSE | `https://zainahmed.net/mcp` |
+
+---
+
+#### Antigravity (CLI, Antigravity 2.0, & Antigravity IDE)
+
+##### Workspace Configuration (Project-Scoped)
+Create or update `.agents/mcp.json` at the root of your workspace:
+
+```json
+{
+  "mcpServers": {
+    "zainahmed": {
+      "command": "npx",
+      "args": ["-y", "@zainahmed.net/sdk", "mcp"]
+    },
+    "zainahmed-remote": {
+      "serverUrl": "https://zainahmed.net/mcp"
+    }
+  }
+}
+```
+
+##### Global Configuration (Machine-Scoped)
+Add to your global configuration file:
+- **macOS / Linux**: `~/.gemini/config/mcp_config.json`
+- **Windows**: `%USERPROFILE%\.gemini\config\mcp_config.json`
+
+```json
+{
+  "mcpServers": {
+    "zainahmed": {
+      "command": "npx",
+      "args": ["-y", "@zainahmed.net/sdk", "mcp"]
+    }
+  }
+}
+```
+
+##### Antigravity CLI (`agy`) Quick Command
+```bash
+# Local stdio runner
+agy mcp add zainahmed -- npx -y @zainahmed.net/sdk mcp
+
+# Or hosted remote endpoint
+agy mcp add zainahmed --url https://zainahmed.net/mcp
+```
+
+---
+
+#### Claude Code
+
+##### CLI One-Liner (Recommended)
+```bash
+# Local stdio runner
+claude mcp add zainahmed -- npx -y @zainahmed.net/sdk mcp
+
+# Or hosted remote streamable HTTP
+claude mcp add --transport http zainahmed https://zainahmed.net/mcp
+```
+
+##### Project Configuration (`.mcp.json`)
+Add to your project root `.mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "zainahmed": {
+      "command": "npx",
+      "args": ["-y", "@zainahmed.net/sdk", "mcp"]
+    }
+  }
+}
+```
+
+Verify connection in your session by running `/mcp` or `claude mcp list`.
+
+---
+
 #### Claude Desktop
 
 Add this configuration to your `claude_desktop_config.json`:
 
 - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 - **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+- **Linux**: `~/.config/Claude/claude_desktop_config.json`
 
 ```json
 {
@@ -72,9 +164,11 @@ Or run the local repository binary directly:
 }
 ```
 
+---
+
 #### Cursor IDE
 
-Add this to `.cursor/mcp.json` in your workspace or through Cursor Global Settings:
+Add this to `.cursor/mcp.json` in your workspace or through Cursor Global Settings (**Cursor Settings > Features > MCP**):
 
 ```json
 {
@@ -87,9 +181,144 @@ Add this to `.cursor/mcp.json` in your workspace or through Cursor Global Settin
 }
 ```
 
-#### Remote Streamable HTTP (No Node.js Required)
+For hosted remote endpoints without local Node.js:
 
-If your client supports remote HTTP/SSE transports, connect directly to the hosted endpoints:
+```json
+{
+  "mcpServers": {
+    "zainahmed": {
+      "url": "https://zainahmed.net/mcp"
+    }
+  }
+}
+```
+
+---
+
+#### Codex (OpenAI Codex CLI & IDE)
+
+##### CLI One-Liner
+```bash
+# Local stdio runner
+codex mcp add zainahmed -- npx -y @zainahmed.net/sdk mcp
+
+# Or hosted remote endpoint
+codex mcp add zainahmed --url https://zainahmed.net/mcp
+```
+
+##### Configuration File (`~/.codex/config.toml` or workspace `.codex/config.toml`)
+Add to your TOML configuration:
+
+```toml
+[mcp_servers.zainahmed]
+command = "npx"
+args = ["-y", "@zainahmed.net/sdk", "mcp"]
+
+# Or hosted remote endpoint:
+# [mcp_servers.zainahmed]
+# url = "https://zainahmed.net/mcp"
+```
+
+Verify connection by running `codex mcp list`.
+
+---
+
+#### Warp Terminal
+
+##### Settings UI (Recommended)
+1. Open Warp Settings (**Cmd + ,** on macOS, **Ctrl + ,** on Linux).
+2. Navigate to **Agents > MCP servers** and click **Add**.
+3. Fill in:
+   - **Name**: `zainahmed`
+   - **Command**: `npx`
+   - **Args**: `-y @zainahmed.net/sdk mcp`
+
+##### Configuration File (`~/.warp/mcp.json` or `.warp/.mcp.json`)
+```json
+{
+  "mcpServers": {
+    "zainahmed": {
+      "command": "npx",
+      "args": ["-y", "@zainahmed.net/sdk", "mcp"]
+    }
+  }
+}
+```
+
+##### Hosted Remote Endpoint
+```json
+{
+  "mcpServers": {
+    "zainahmed": {
+      "url": "https://zainahmed.net/mcp"
+    }
+  }
+}
+```
+
+---
+
+#### Factory Droid
+
+##### Interactive Terminal
+Type `/mcp` in your Droid session and select **Add Custom Server**.
+
+##### CLI One-Liner
+```bash
+droid mcp add zainahmed https://zainahmed.net/mcp --type http
+```
+
+##### Configuration File (`~/.factory/mcp.json`)
+```json
+{
+  "mcpServers": {
+    "zainahmed": {
+      "type": "http",
+      "url": "https://zainahmed.net/mcp"
+    }
+  }
+}
+```
+
+---
+
+#### Superset ([superset.sh](https://superset.sh/))
+
+Superset is the multi-agent AI terminal and workspace. Add `.mcp.json` to your workspace root to make Zain Ahmed platform tools available across all terminal tabs and background agent loops:
+
+```json
+{
+  "mcpServers": {
+    "zainahmed-operations": {
+      "type": "http",
+      "url": "https://zainahmed.net/mcp"
+    },
+    "zainahmed-docs": {
+      "type": "http",
+      "url": "https://zainahmed.net/mcp/docs"
+    }
+  }
+}
+```
+
+Or run via local stdio:
+
+```json
+{
+  "mcpServers": {
+    "zainahmed": {
+      "command": "npx",
+      "args": ["-y", "@zainahmed.net/sdk", "mcp"]
+    }
+  }
+}
+```
+
+---
+
+#### Remote Streamable HTTP (Universal / Zero Node.js Required)
+
+If your client supports remote HTTP/SSE transports, connect directly to the hosted endpoints with zero local dependencies:
 
 ```json
 {
