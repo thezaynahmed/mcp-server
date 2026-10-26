@@ -1,6 +1,6 @@
 # Zain Ahmed Platform MCP Server
 
-Official Model Context Protocol (MCP) server for Zain Ahmed's verified multi-cloud production systems, SRE blueprints, 5x cloud credentials, and FinOps advisory.
+Official Model Context Protocol (MCP) server for Zain Ahmed: Senior Software & Platform Engineer. Enterprise AI & cloud infrastructure strategy, multi-cloud SRE, Agentic AI & MLOps architectures, and FinOps advisory.
 
 [![Smithery Registry](https://img.shields.io/badge/Smithery-Registry-orange.svg?style=flat-square)](https://smithery.ai/server/@zainahmed-net/mcp-server)
 [![npm version](https://img.shields.io/npm/v/@zainahmed.net/sdk.svg?style=flat-square&color=2563eb)](https://www.npmjs.com/package/@zainahmed.net/sdk)
@@ -9,7 +9,7 @@ Official Model Context Protocol (MCP) server for Zain Ahmed's verified multi-clo
 [![MCP Protocol](https://img.shields.io/badge/MCP-2024--11--05-emerald.svg?style=flat-square)](https://modelcontextprotocol.io)
 [![Live Platform](https://img.shields.io/badge/Live%20Platform-zainahmed.net-0066cc.svg?style=flat-square)](https://zainahmed.net)
 
-This server connects autonomous AI agents (Claude Code, Cursor, Windsurf, Roo Code, Antigravity) directly to Zain Ahmed's cloud engineering platform. It enables agents to inspect verified cloud architectures, calculate projected FinOps cost savings, search technical runbooks, and dispatch encrypted consultation inquiries.
+This server connects autonomous AI agents (Claude Code, Cursor, Windsurf, Roo Code, Antigravity) directly to Zain Ahmed's engineering platform. It enables agents to inspect verified multi-cloud architectures, query Enterprise AI & MLOps patterns, calculate projected FinOps cost savings, search technical runbooks, and dispatch encrypted consultation inquiries.
 
 ---
 
